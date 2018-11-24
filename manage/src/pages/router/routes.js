@@ -1,10 +1,5 @@
 import { loginConfig } from '../containers/Login/App';
 import { homeConfig } from '../containers/Home/App';
-import { agentConfig } from '../containers/Agent/App';
-import { crowdConfig } from '../containers/Crowd/App';
-import { materialConfig } from '../containers/Material/App';
-import { liveConfig } from '../containers/Live/App';
-import { settingConfig } from '../containers/Setting/App';
 import Layout from './Layout';
 export const routeConfig = [
 	// 登录首页
@@ -14,11 +9,6 @@ export const routeConfig = [
 		indexRoute: { onEnter: (nextState, replace) => replace('/home/main') },
 		childRoutes: [
 			...homeConfig,
-			...agentConfig,
-			...crowdConfig,
-			...materialConfig,
-			...liveConfig,
-			...settingConfig,
 		]
 	},
 	...loginConfig,

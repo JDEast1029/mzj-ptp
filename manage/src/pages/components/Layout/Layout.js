@@ -84,7 +84,6 @@ export default (options = {}) =>
 									id="layout-content"
 									className="g-container"
 									style={{
-										margin: "0 0 0 12px",
 										overflow: "initial",
 										height: _global.innerHeight - 84,
 										overflow: "auto",

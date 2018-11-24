@@ -19,9 +19,9 @@ export const redirectToLogin = (nextState, replace, callback) => {
 
 export const redirectUserToHome = (nextState, replace, callback) => {
 	let user = getItem(`user_${_global.version}`);
-	if (!user) {
-		replace({ pathname: '/login' });
-	}
+	// if (!user) {
+	// 	replace({ pathname: '/login' });
+	// }
 	callback();
 };
 

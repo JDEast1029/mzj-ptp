@@ -14,15 +14,6 @@ export const homeConfig = [
 				onEnter: redirectUserToHome
 			},
 			{
-				path: "log",
-				getComponent: (nextState, cb) => {
-					require.ensure([], require => {
-						cb(null, require("./Modules/HomeLog").default);
-					});
-				},
-				onEnter: redirectUserToHome
-			},
-			{
 				path: "*",
 				onEnter: (nextState, replace) => replace("/home/main")
 			}

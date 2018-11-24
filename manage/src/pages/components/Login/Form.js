@@ -156,7 +156,7 @@ class LoginForm extends Component {
 	};
 	render() {
 		return (
-			<div className="g-flex g-fd-c g-jc-c v-login-form g-lh-44 g-absolute">
+			<div className="g-flex g-fd-c g-jc-c v-login-form g-lh-44">
 				<h3 className="g-tc g-fs-24 g-lh-60 g-c-blue-3">登录</h3>
 				<div className="g-flex g-pd-b-20">
 					<label className="g-w-2 g-tr">账号</label>
@@ -174,46 +174,6 @@ class LoginForm extends Component {
 						onInput={this.handlePwdChange}
 						autoComplete="new-password"
 					/>
-				</div>
-				<div className="g-flex g-pd-tb-20">
-					<label className="g-w-2 g-tr">验证码</label>
-					<div
-						className={`_input-box g-flex-ac ${this.state
-							.codeActive && "_active"}`}
-					>
-						<input
-							className="_code"
-							type="text"
-							onFocus={() => {
-								this.setState({
-									codeActive: true
-								});
-							}}
-							onBlur={() => {
-								this.setState({
-									codeActive: false
-								});
-							}}
-							onInput={this.handleSecurityChange}
-						/>
-						<span>|</span>
-						<div
-							ref={code => (this.code = code)}
-							className="g-pd-l-10 g-pointer g-inline"
-							onClick={this.handleSendCode}
-						>
-							{this.state.codeContent && (
-								<img
-									src={`${
-										API_ROOT[
-											types._LOGIN_MAIN_VERIFICATION_GET
-										]
-									}?v=${this.state.codeContent}`}
-									alt="换一个"
-								/>
-							)}
-						</div>
-					</div>
 				</div>
 				<DebounceClick>
 					<div

@@ -13,7 +13,7 @@ export const DEV_WITH_SERVER = !0;
 
 const OSS_IMG = 'https://wya-xqb.oss-cn-qingdao.aliyuncs.com/common/manage/';
 export const ADD_BTN = OSS_IMG + 'add_btn.png';
-export const LOGIN_BG = OSS_IMG + 'login_bg.png';
+export const LOGIN_BG = "https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg";
 export const CROWD_LOADER = OSS_IMG + 'crowd_loader.png'; // 默认群主头像
 export const CROWD_LOGE = OSS_IMG + 'crowd_loge.png'; // 默认群头像
 export const PRIVATE_CATE = OSS_IMG + 'private_cate.png'; // 非公共分类头像

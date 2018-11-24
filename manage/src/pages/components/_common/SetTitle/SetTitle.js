@@ -23,13 +23,13 @@ class WxSetTitle extends Component {
 	hackForSetTitle() {
 	}
 	render() {
-		const { className, style, isShow, title, renderRight } = this.props;
+		const { className, style, isShow, showTitle, title, renderRight } = this.props;
 		const styleShow = isShow ? {} : { display: "none" };
 		return (
 			<div className={`g-bg-white ${className}`} style={{ ...style, ...styleShow }}>
 				<div
 					className="g-pd-lr-20 g-fs-16 g-lh-50 g-ie-box g-c-black-imp g-flex-ac g-jc-sb"
-					style={{ borderBottom: '1px solid #e6e6e6' }}>
+					style={{ borderBottom: '1px solid #e6e6e6', display: showTitle ? 'block' : 'none' }}>
 					<span>{title || 'Title'}</span>
 					{renderRight && renderRight()}
 				</div>
@@ -68,7 +68,8 @@ WxSetTitle.propTypes = {
  */
 WxSetTitle.defaultProps = {
 	wrapper: "window",
-	isShow: 1
+	isShow: 1,
+	showTitle: 1
 };
 export default WxSetTitle;
 

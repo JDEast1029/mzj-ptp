@@ -110,27 +110,6 @@ class Aside extends Component {
 				defaultCollapsed={false}
 				style={{ overflowY: 'auto', width: '100%' }}
 			>
-				<div
-					style={{
-						width: '180px',
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: "center",
-						alignItems: "center",
-						margin: "0 auto",
-						marginBottom: "30px"
-					}}>
-					<Avatar
-						src={logo}
-						style={{
-							width: 70,
-							border: '1px solid #ccc',
-							height: 70,
-							borderRadius: 64,
-						}}
-					/>
-					<div>{company_name}</div>
-				</div>
 				{
 					createElement(
 						this.props.component,
