@@ -1,0 +1,76 @@
+/**
+ * @file
+ * reset.scss
+ */
+
+html {
+    font-size: 625% !important;
+    // 1rem = 100px
+}
+
+body {
+    font-family: 'Microsoft Yahei', 'Helvetica' !important;
+    line-height: 20px !important;
+    font-size: 14px !important;
+    color: #2e3136;
+	background-color: #f5f6f7 !important;
+}
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	border: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	/**
+	 * 滚动不受阻，激活平滑滚动
+	 * ios会和fixed产生bug，比如input
+	 */
+	/* -webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch; */
+	/**
+	 * 字体样式不模糊
+	 */
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	/**
+	 * 可以复制粘帖
+	 */
+	-webkit-user-select: text!important;
+	user-select: text!important;
+}
+
+textarea, input {
+	-webkit-appearance: none;
+}
+
+/**
+ * g-reset
+ * 用户初始化元素的类
+ */
+.g-reset ol,
+.g-reset ul,
+.g-reset li {
+    list-style: none;
+}
+.g-reset a {
+    text-decoration: none;
+    color: inherit;
+}
+.g-reset img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+.g-reset .inline {
+    display: inline
+}
+.g-reset i,
+.g-reset b,
+.g-reset em,
+.g-reset span {
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+}

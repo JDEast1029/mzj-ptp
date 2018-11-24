@@ -1,0 +1,32 @@
+@mixin formatResize($scale) {
+	.c-share-back{
+		position: fixed;
+		width: 100%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		bottom: 200px / $scale;
+		z-index: 9;
+		padding-left: 50px / $scale;
+		.__content{
+			float: left;
+			width: 70px / $scale
+		}
+		.__icon{
+			float: right;
+			border-radius:100%;
+			text-align: center;
+			background:rgba(0, 0, 0, .5);
+			line-height:70px / $scale;
+			height:70px / $scale;
+			width:70px / $scale;
+			margin-top:-70px / $scale;
+			color: white;
+			font-size: 50px / $scale
+		}
+	}
+}
+@include formatResize(1);
+.g-init-echart {
+	@include formatResize(2);
+}

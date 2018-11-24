@@ -1,0 +1,33 @@
+/**
+ * @file
+ * reset.scss
+ */
+
+body {
+    ::-webkit-scrollbar {
+        width: 6px; // 很有影响
+    }
+    font-family: 微软雅黑 !important;
+}
+
+.g-container {
+    border: 1px solid #e8e7ec !important;
+    ::-webkit-scrollbar {
+        width: 6px; // 很有影响
+    }
+    ::-webkit-scrollbar:horizontal {
+        height: 6px;
+    }
+}
+
+.wp-popup .__mask {
+    z-index: 999 !important;
+}
+
+.wp-popup .__container {
+    z-index: 999 !important;
+}
+
+.BraftEditor-container {
+    overflow: initial !important;
+}

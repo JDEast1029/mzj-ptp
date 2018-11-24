@@ -1,0 +1,93 @@
+.v-live-room-voice {
+	height: 150px;
+	background: #f9f9f9;
+	border-top: 1px solid #ededed;
+	._btn-container {
+		position: relative;
+		width: 90px;
+		height: 90px;
+		margin-top: 5px;
+		.__btn {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 60px;
+			height: 60px;
+			margin: auto;
+			color: #ffffff;
+			background-color: #089ffc;
+			border-radius: 30px;
+		}
+		.__wave {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 80px;
+			height: 80px;
+			margin: auto;
+			background-color: rgba(8, 159, 252, 0.2);
+			border-radius: 40px;
+		}
+		.__animate-wave {
+			animation-name: wave;
+			animation-duration: .8s;
+			animation-timing-function: linear;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		
+		@keyframes wave {
+			0% {
+				width: 80px;
+				height: 80px;
+				border-radius: 40px;
+			}
+			100% {
+				width: 90px;
+				height: 90px;
+				border-radius: 45px;
+			}
+		}
+	}
+	._rerecord {
+		position: absolute;
+		top: 0;
+		right: 18px;
+		font-size: 12px;
+		color: #ffffff;
+		background-color: #089ffc;
+		border-radius: 10px;
+		padding: 0 10px;
+		box-sizing: border-box;
+		&:active {
+			background-color: #0076ff;
+		}
+	}
+}
+
+.v-live-room-text {
+	position: relative;
+	border-top: 1px solid #ededed;
+	._input {
+		height: 32px;
+		border: 1px solid #e5e5e5;
+		background: #f4f2f2;
+		border-radius: 16px;
+		padding: 5px 10px;
+		font-size: 14px;
+	}
+    // ._shadow {
+    //     position: absolute;
+    //     z-index: -100;
+    // }
+    // textarea {
+    //     box-sizing: border-box;
+        
+    //     width: 100%;
+    // }
+}

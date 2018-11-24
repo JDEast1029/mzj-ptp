@@ -1,0 +1,37 @@
+.v-home-room {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v-home-room-fill {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.v-home-room-main {
+	position: relative;
+	flex: 1;
+	background-color: #f5f5f5;
+}
+
+.v-home-room-footer {
+	flex-shrink: 0;
+}
+
+.v-home-room-header {
+	flex-shrink: 0;
+	color: #089ffc;
+}
+
+.v-home-room-list {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	overflow: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	flex: 1;
+}

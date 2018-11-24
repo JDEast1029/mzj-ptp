@@ -1,0 +1,15 @@
+.v-material-detail {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    ._audio {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        ._audio-main {
+            border-radius: 5px;
+            background-color: #a2dd46;
+            color: white;
+            padding: 10px 15px;
+        }
+    }
+}

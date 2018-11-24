@@ -1,0 +1,72 @@
+.v-home-main {
+	background-color: #fff;
+	._statistics {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		._association {
+			height: 362px;
+			border: 1px solid #e7e7e7;
+			margin-bottom: 20px;
+			width: 49.4%;
+			._tittle {
+				box-sizing: border-box;
+				height: 52px;
+				line-height: 52px;
+				padding-left: 20px;
+				font-size: 14px;
+				color: #000;
+				font-family: Microsoft YaHei, Arial, Verdana, Sans-serif;
+				background-color: #f4f4f4;
+			}
+			._content {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				height: 310px;
+				._card {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 25%;
+					height: 220px;
+					background-color: #fefefe;
+					box-shadow: 0px 0px 20px #E0E0E0;
+					-moz-box-shadow: 0px 0px 20px #E0E0E0;
+					-webkit-box-shadow: 0px 0px 20px #E0E0E0;
+					._txt {
+						font-size: 16px;
+						color: #000;
+						margin-bottom: 20px;
+						font-family: Microsoft YaHei, Arial, Verdana, Sans-serif;
+					}
+					._num {
+						font-size: 30px;
+						color: #d71518;
+						font-family: Microsoft YaHei, Arial, Verdana, Sans-serif;
+					}
+				}
+				._card:hover {
+					background-color: #e5f5ff;
+				}
+			}
+		}
+	}
+	._association {
+		height: 440px;
+		border: 1px solid #e7e7e7;
+		margin-bottom: 20px;
+		._tittle {
+			box-sizing: border-box;
+			height: 52px;
+			line-height: 52px;
+			padding-left: 20px;
+			font-size: 14px;
+			color: #000;
+			font-family: Microsoft YaHei, Arial, Verdana, Sans-serif;
+			background-color: #f4f4f4;
+		}
+	}
+}

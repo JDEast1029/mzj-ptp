@@ -1,0 +1,211 @@
+@import "core/index";
+// font-size
+.g-fs-13 {
+    font-size: 13px;
+}
+
+.g-fs-18 {
+    font-size: 18px;
+}
+
+// margin 
+.g-m-t-2 {
+    margin-top: 2px;
+}
+
+// border
+.g-bb {
+    border-bottom: 1px solid #dddddd !important;
+}
+
+// display
+.g-block {
+    display: block;
+}
+
+.g-inline {
+    display: inline;
+}
+
+.g-hide {
+    display: none !important;
+}
+
+.g-show {
+    display: block !important;
+}
+
+.g-opacity {
+    opacity: 0.5;
+}
+
+/**
+ * g-disabled
+ * 禁用事件
+ */
+
+.g-disabled {
+    pointer-events: none;
+}
+
+/**
+ * g-noanimate
+ * 禁用动画
+ */
+
+.g-noanimate {
+    animation: 0 !important;
+    -webkit-animation: 0 !important;
+}
+
+/**
+ * 一行文字
+ */
+
+.g-oneline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/**
+  * 两行文字
+  */
+
+.g-twoline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.g-fixed-footer {
+    // 无动画 底部弹出
+    position: fixed;
+    width: 100%;
+    z-index: 8;
+    background: white;
+    bottom: 0;
+    left: 0;
+    right: 0; // margin: 0 auto;
+}
+
+/**
+  * 按钮
+  */
+
+.g-small-btn-blue {
+    width: 58px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    background-color: #089ffc;
+    color: #fff;
+    font-size: 14px;
+    &:active {
+        background-color: #0076ff;
+    }
+}
+
+.g-big-btn-blue {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background-color: #089ffc;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    &:active {
+        background-color: #0076ff;
+    }
+}
+
+.g-big-btn-disable {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background-color: #e1e1e1;
+    color: #999999;
+    text-align: center;
+    font-size: 14px;
+}
+
+/**
+  * 小标题底下的细线
+  */
+
+.g-border-b-line {
+    border-bottom: 0.5px solid #e5e5e5;
+}
+
+.g-width {
+    width: 100%;
+}
+
+.g-height {
+    height: 100%;
+}
+
+/**
+  * 头像
+  */
+
+.g-avatar {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    background: #f0f0f0;
+}
+
+/**
+  * 修改列表为空时显示状态的样式
+  */
+
+.pull-view-wrap ._status>span {
+    font-size: 14px !important;
+    line-height: 32px;
+}
+
+// 飞入
+.slide-in-appear {
+    transform: translate3D(100%, 0, 0);
+    transition: all 300ms linear;
+    &.slide-in-appear-active {
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+.slide-in-enter {
+    transform: translate3D(100%, 0, 0);
+    transition: all 300ms linear;
+    &.slide-in-enter-active {
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+// 向左滑出
+.slide-in-leave {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+    transition: all 300ms linear;
+    &.slide-in-leave-active {
+        opacity: 0.01;
+        transform: translate3D(-100%, 0, 0);
+    }
+}
+
+.g-break-word {
+    word-break: break-word;
+    word-wrap: break-word;
+}

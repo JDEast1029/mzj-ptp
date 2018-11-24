@@ -1,0 +1,349 @@
+@import "core/index";
+.g-lh-50 {
+    line-height: 50px;
+}
+
+.g-fw-600 {
+    font-weight: 600;
+}
+
+.g-width {
+    width: 100%;
+}
+
+.g-tj {
+    text-align: justify;
+}
+
+.g-img-125 {
+    display: block;
+    width: 125px;
+    height: 125px;
+}
+
+.g-br-50 {
+    border-radius: 50%;
+}
+
+.g-c-black {
+    color: #000000 !important;
+}
+
+.g-c-black-imp {
+    color: #000000 !important;
+}
+
+.g-c-333-imp {
+    color: #333 !important;
+}
+
+.g-c-dark {
+    color: #333 !important;
+}
+
+.g-c-gray {
+    color: #666 !important;
+}
+
+.g-c-gray2 {
+    color: #ccc !important;
+}
+
+.g-c-blue-3 {
+    color: #089ffc
+}
+
+.g-c-blue-pit {
+    color: #089ffc;
+    cursor: pointer;
+}
+
+.g-cp {
+    cursor: pointer;
+}
+
+.g-bg-f7 {
+    background-color: #f7f7f7;
+}
+
+.g-bg-f8 {
+    background-color: #f8f8f8;
+}
+
+.g-bg-f3 {
+    background-color: #f3f3f3;
+}
+
+.g-bg-f4 {
+    background-color: #fafafa;
+    color: inherit;
+}
+
+.g-bg-cc {
+    background-color: #cccccc;
+}
+
+.g-disabled {
+    pointer-events: none;
+}
+
+.g-operation {
+    white-space: nowrap;
+    color: #089ffc;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.g-divider-vertical {
+    margin: 0 8px;
+    display: inline-block;
+    height: 12px;
+    width: 1px;
+    vertical-align: middle;
+    position: relative;
+    box-sizing: border-box;
+    background: #ccc;
+}
+
+.g-border-gray {
+    border: 1px solid #e9e9e9;
+}
+
+.g-border-gray-dark {
+    border: 1px solid #cecece;
+}
+
+.g-lh-50 {
+    line-height: 50px;
+}
+
+.g-ie-box {
+    box-sizing: border-box;
+}
+
+.g-c-light-red {
+    color: #d3171a;
+}
+
+.g-m-t-50 {
+    margin-top: 50px;
+}
+
+.g-bl {
+    &:before {
+        border-left: 1px solid #e7e7e7 !important;
+    }
+}
+
+.g-br {
+    &:before {
+        border-right: 1px solid #e7e7e7 !important;
+    }
+}
+
+.g-bl-red {
+    border-left: 2px solid #f52556;
+}
+
+.g-border {
+    border: 1px solid #d2d2d2;
+}
+
+.gp-btn-dark-yellow {
+    display: inline-block;
+    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 4px;
+    background: #ffad00;
+    color: #000;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+        background: darken(#ffad00, 3%);
+        color: #000;
+    }
+    &:active {
+        background: darken(#ffad00, 5%);
+    }
+}
+
+.gp-btn {
+    display: inline-block;
+    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gp-btn-disable {
+    display: inline-block;
+    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #ccc;
+    cursor: not-allowed;
+    font-size: 14px;
+}
+
+.gp-btn-blue {
+    color: #ffffff !important;
+    background: #089ffc !important;
+    background-color: #089ffc !important;
+    border-color: #089ffc !important;
+    &:hover {
+        background: #2daefe !important;
+        background-color: #2daefe !important;
+    }
+    &:active {
+        background: #0997ee !important;
+        background-color: #0997ee !important;
+    }
+}
+
+.gp-btn-white {
+    background: white !important;
+    border: 1px solid #ccc;
+    min-width: 72px;
+    padding: 0 20px;
+    border-radius: 4px;
+    line-height: 34px;
+    height: 34px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        color: white;
+        background: #2daefe !important;
+        background-color: #2daefe !important;
+    }
+    &:active {
+        color: white;
+        background: #0997ee !important;
+        background-color: #0997ee !important;
+    }
+}
+
+/**
+ * 用于列表操作栏的简单蓝色按钮
+ */
+
+.gp-btn-simple-blue {
+    color: #089ffc;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/**
+ * 用于点击上按钮
+ */
+
+.gp-btn-upload {
+    width: 70px;
+    height: 70px;
+    border: 1px dashed #bfbebe;
+    text-align: center;
+    line-height: 66px;
+    font-size: 22px;
+    color: #bfbebe;
+    &:hover {
+        border: 1px dashed #01a2fd;
+        color: #01a2fd;
+    }
+}
+
+// display
+.g-block {
+    display: block;
+}
+
+.g-inline {
+    display: inline;
+}
+
+/**
+ * 一行文字
+ */
+
+.g-oneline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/**
+ * 两行文字
+ */
+
+.g-twoline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/**
+ * padding
+ */
+
+.g-pd-t-30 {
+    padding-top: 30px;
+}
+
+.g-pd-b-30 {
+    padding-bottom: 30px;
+}
+
+/**
+ * 给表格添加移入效果
+ */
+
+table>tbody>tr:hover {
+    background: rgb(250, 250, 250);
+    cursor: pointer;
+}
+
+// .g-modal-box .__conent {
+//     max-height: 60vh;
+//     overflow: auto !important;
+// }
+.g-modal-box {
+    table tbody {
+        display: block;
+        height: 50vh;
+        overflow-y: scroll;
+    }
+    table thead,
+    tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+}
+
+.g-ant-layout-content {
+    margin-left: 200px;
+    height: 100vh;
+}
+
+.rc-upload-tips{
+    z-index:10000000 !important;
+}

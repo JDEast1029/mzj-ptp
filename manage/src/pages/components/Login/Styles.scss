@@ -1,0 +1,66 @@
+@import "~wya-sass/lib/themes/index.scss";
+@import "~wya-sass/lib/core/index.scss";
+$blue: #089ffc;
+.v-login-title {
+	width: 540px;
+	height: 540px;
+	top: -60px;
+	left: 145px;
+	background-color: #4e4aff;
+}
+
+.v-login-form {
+	height: 546px;
+	width: 550px;
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 20px;
+	background: #fff;
+	right: 70px;
+	top: -52px;
+	& input[type="text"]:not(._code),
+	& input[type="password"],
+	._input-box {
+		@extend .gp-input;
+		line-height: 44px;
+		height: 44px;
+		border-radius: 20px;
+		width: 314px;
+		margin-left: 3.3334%;
+		&:focus,
+		&.error,
+		&._active {
+			border-color: $blue;
+			box-shadow: 0 0 3px / $scale 0 $blue;
+		}
+	}
+	._code {
+		height: 40px;
+		line-height: 40px;
+		border-radius: 6px;
+		width: 200px;
+		display: inline-block;
+	}
+	._login-btn {
+		line-height: 44px;
+		border-radius: 22px;
+		font-size: 16px;
+		text-align: center;
+		color: $white;
+		cursor: pointer;
+		background: $blue;
+		width: 314px;
+		margin-top: 20px;
+		margin-bottom: 90px;
+		&._pd20 {
+			margin-left: 20%;
+		}
+		&:hover {
+			background: darken($blue, 3%);
+			color: $white;
+		}
+		&:active {
+			background: darken($blue, 5%);
+		}
+	}
+}

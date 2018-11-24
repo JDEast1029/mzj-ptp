@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+// toast
+.am-toast {
+	font-size: 14px;
+	z-index: 3999 !important;
+}
+.am-toast-notice-content .am-toast-text {
+	min-width: 1.2rem;
+	border-radius: 3px;
+	line-height: 1.5;
+	padding: 9px 15px;
+}
+.am-toast-notice-content .am-toast-text.am-toast-text-icon {
+	border-radius: 5px;
+	padding: 15px;
+}
+
+// icon
+.am-icon {
+	width: 22px;
+	height: 22px;
+}
+.am-icon-xxs {
+	width: 15px;
+	height: 18px;
+}
+.am-icon-xs {
+	width: 18px;
+	height: 18px;
+}
+.am-icon-sm {
+	width: 21px;
+	height: 21px;
+}
+.am-icon-md {
+	width: 22px;
+	height: 22px;
+}
+.am-icon-lg {
+	width: 36px;
+	height: 36px;
+}
+// tab
+.am-tabs-bar .am-tabs-prevpage:before {
+	width: 59px;
+}
+.am-tabs-bar .am-tabs-nextpage:after {
+	width: 59px;
+}
+.am-tabs-bar .am-tabs-tab {
+	font-size: 15px;
+	height: 44px;
+	line-height: 44px;
+}
+.am-tabs-ink-bar {
+	height: 2px;
+}
+.am-init-fixed .am-tabs-bar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 8;
+}
+// badge
+.am-badge-text{
+	top: -6px;
+	height: 18px;
+	line-height: 18px;
+	min-width: 9px;
+	border-radius: 12px;
+	padding: 0 5px;
+	text-align: center;
+	font-size: 12px;
+}
+.am-badge-dot{
+	top: -4px;
+	height: 8px;
+	width: 8px;
+}
+.am-badge-dot-large{
+	height: 16px;
+	width: 16px;
+}
+.am-badge-corner {
+	width: 80px;
+	padding: 8px;
+	right: -32px;
+	top: 8px;
+	font-size: 15px;
+}
+// modal
+.am-modal.am-modal-transparent .am-modal-content {
+	border-radius: 7px;
+	padding-top: 15px;
+}
+.am-modal.am-modal-transparent .am-modal-content .am-modal-body {
+	padding: 0 15px 15px;
+}
+.am-modal-title {
+	font-size: 18px;
+}
+.am-modal-header {
+	padding: 6px 15px 15px;
+}
+.am-modal-close {
+	right: 15px;
+	height: 21px;
+	width: 21px;
+}
+.am-modal-close-x {
+	width: 15px;
+	height: 15px;
+}
+.am-modal-body {
+	font-size: 14px;
+}
+.am-modal.am-modal-operation .am-modal-content {
+	border-radius: 7px;
+}
+.am-modal.am-modal-operation .am-modal-content .am-modal-button {
+	padding-left: 15px;
+}
+.am-modal-button-group-h .am-modal-button {
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+}
+.am-modal-button-group-v .am-modal-button {
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.am-modal-input:first-child {
+	margin-top: 9px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.am-modal-input:last-child {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.am-modal-input input {
+	padding: 3px 0;
+}
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-header {
+// 	padding: 18px 48px 24px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-header .am-modal-title {
+// 	font-size: 42px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-body {
+// 	font-size: 32px;
+// 	padding: 0 48px 30px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-footer {
+// 	padding-bottom: 24px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-footer .am-modal-button-group-h {
+// 	padding: 0 24px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-footer .am-modal-button-group-h .am-modal-button {
+// 	margin-left: 6px;
+// 	padding: 0 30px;
+// 	height: 96px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-footer .am-modal-button-group-v {
+// 	padding: 0 24px;
+// }
+// .am-modal.am-modal-transparent.am-modal-android .am-modal-content .am-modal-footer .am-modal-button-group-v .am-modal-button {
+// 	padding: 0 30px;
+// 	margin-left: 6px;
+// 	height: 96px;
+// }
+//
+// ...部分添加，不要全部
+
+
+
+.am-toast {
+	z-index: 3999 !important;
+}
+// 搜索框
+.am-search-synthetic-ph {
+	box-sizing: content-box;
+}
+.am-search-input .am-search-clear {
+	right: 4px !important;
+}
+.am-search-input {
+	border-radius: 14px!important;
+}
+.slider-decorator-0 {
+	bottom: 5px!important;
+}
+.am-textarea-control textarea {
+	font-size: 14px !important;
+}
+.am-list-item .am-list-line .am-list-extra {
+	font-size: 14px !important;
+	flex-basis: 60% !important;
+}
+.am-list-item .am-list-line .am-list-content {
+	font-size: 14px !important;
+}
+.am-modal-button-group-h .am-modal-button {
+	color:#5C8DFF !important;
+}
+.am-modal-button-group-h .am-modal-button:first-child{
+	color:#2e3136 !important;
+}
+.g-am-init {
+	.am-tabs-bar {
+		background: white!important;
+	}
+	.am-tabs-tab{
+		position:relative;
+	}
+	.am-tabs-tab-active {
+		color: #5C8DFF!important;
+	}
+	.am-tabs-ink-bar {
+		background-color: #5C8DFF!important;
+		z-index: 1;
+	}
+	._line-animated {
+		background-color: #5C8DFF!important;
+		z-index: 1;
+	}
+	
+}
+  
