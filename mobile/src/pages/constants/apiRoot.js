@@ -2,19 +2,11 @@ import { DEV_WITH_SERVER } from './constants';
 import _common from './api/_common';
 import rc from './api/rc';
 import home from './api/home';
-import material from './api/material';
-import live from './api/live';
-import mine from './api/mine';
-import invite from './api/invite';
 
 const API = {
 	...rc,
 	..._common,
 	...home,
-	...material,
-	...live,
-	...mine,
-	...invite
 };
 
 

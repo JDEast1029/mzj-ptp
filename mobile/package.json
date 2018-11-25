@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.4.4",
-    "antd-mobile": "^2.1.9",
+    "antd-mobile": "^2.2.2",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "draftjs-utils": "^0.9.4",

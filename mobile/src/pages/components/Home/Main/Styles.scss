@@ -10,3 +10,36 @@
 		margin: auto;
 	}
 }
+
+.v-list-item {
+	background-color: #ffffff;
+	padding: 20px 0;
+	position: relative;
+	img {
+		width: 80px;
+		height: 80px;
+		overflow: hidden;
+		border-radius: 10px;
+		margin-left: 20px;
+	}
+	._recommend {
+		background-color: #B7A07E;
+		color: #F1EAE2;
+		font-size: 14px;
+		padding: 0 4px;
+	}
+	._new {
+		background-color: #F44238;
+		color: #ffffff;
+		font-size: 14px;
+		padding: 0 4px;
+	}
+	._divider-line {
+		position: absolute;
+		background: #F5F5F5;
+		height: 1px;
+		left: 110px;
+		right: 0;
+		bottom: 0;
+	}
+}
