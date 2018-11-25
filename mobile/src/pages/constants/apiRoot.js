@@ -2,11 +2,13 @@ import { DEV_WITH_SERVER } from './constants';
 import _common from './api/_common';
 import rc from './api/rc';
 import home from './api/home';
+import login from './api/login';
 
 const API = {
 	...rc,
 	..._common,
 	...home,
+	...login
 };
 
 

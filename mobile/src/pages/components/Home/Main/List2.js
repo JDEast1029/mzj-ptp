@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
-
+import Wechat from './Wechat';
 export default class List2 extends Component {
 	render() {
 		return (
@@ -16,6 +16,8 @@ export default class List2 extends Component {
 				<Item />
 				
 				<Item />
+
+				<Wechat />
 			</div>
 		);
 	}

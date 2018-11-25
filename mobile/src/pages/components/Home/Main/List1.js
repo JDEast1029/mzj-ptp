@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import Wechat from './Wechat';
 
 export default class List1 extends Component {
 	render() {
@@ -16,6 +17,18 @@ export default class List1 extends Component {
 				<Item />
 				
 				<Item />
+
+
+				<div className="g-m-t-20 g-tc">
+					<p style={{ color: '#ADB2BC' }}>以上全部申请均未下款即可领取</p>
+					<div className="g-flex-cc g-c-white g-fs-16" style={{ margin: '10px 40px 10px 40px', backgroundColor: '#EF0F00', borderRadius: 20, padding: '10px' }}>
+						审批被拒领转运红包
+					</div>
+					<div className="g-flex-cc g-c-white g-fs-16" style={{ margin: '10px 40px 10px 40px', backgroundColor: '#2296F3', borderRadius: 20, padding: '10px' }}>
+						更多新口子
+					</div>
+				</div>
+				<Wechat />
 			</div>
 		);
 	}

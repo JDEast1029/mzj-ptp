@@ -1,4 +1,4 @@
-import { redirectToLogin } from '../../router/auth';
+import { redirectUserToHome } from '../../router/auth';
 export const homeConfig = [
 	{
 		path: 'home',
@@ -7,6 +7,6 @@ export const homeConfig = [
 				cb(null, require('./Modules/HomeMain').default);
 			});
 		},
-		onEnter: redirectToLogin
+		onEnter: redirectUserToHome
 	},
 ];
