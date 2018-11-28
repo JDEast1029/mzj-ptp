@@ -6,8 +6,8 @@ import List2 from './List2';
 import './Styles.scss';
 
 const  tabs = [
-	{ title: '最优下款组合', type: '1' },
-	{ title: '新口子', type: '2' },
+	{ title: '最优下款组合', key: '1' },
+	{ title: <div style={{ position: 'relative' }}>新口子<span className="g-fs-12" style={{ color: '#ffffff', position: 'absolute', top: '-10px', right: '-20px' }}>新</span></div>, key: '2' },
 ];
 export default class TabList extends Component {
 	constructor(props){
@@ -21,9 +21,9 @@ export default class TabList extends Component {
 		};
 	}
 	handleChange(tab){
-		_global.history.replace(`/home?type=${tab.type}`);
+		_global.history.replace(`/home?type=${tab.key}`);
 		this.setState({
-			type: tab.type
+			type: tab.key
 		});
 	}
 	render() {
@@ -32,11 +32,11 @@ export default class TabList extends Component {
 		return (
 			<Tabs 
 				tabs={tabs}
-				initialPage={type}
+				page={type}
 				onChange={this.handleChange}
 			>
-				<List1 />
-				<List2 />
+				<List1 key="1" />
+				<List2 key="2"/>
 			</Tabs>
 		);
 	}

@@ -224,8 +224,9 @@ const defaultConfig = {
 		},
 		// proxy: {
 		// 	"/api": {
-		// 		target: "http://test.com",
-		// 		pathRewrite: {"^/api" : ""}
+		// 		target: "http://101.200.55.32",
+		// 		changeOrigin: true,
+		// 		pathRewrite: { "^/api": "" }
 		// 	}
 		// },
 		hot: true, // 同--hot

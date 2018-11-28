@@ -11,18 +11,26 @@ export default class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			mobile: '',
+			phone: '',
+			code: '',
+			codeContent: '获取验证码',
+			time: 60,
 			code: ''
 		};
 	}
 
-	handleLogin() {
+	componentWillUnmount() {
+		this.time && clearInterval(this.time);
+		this.time = null;
+	}
+
+	handleLogin = () => {
 		// TODO
 		net.ajax({
 			url: API_ROOT[types.USER_LOGIN_POST],
-			type: "POST",
+			type: "GET",
 			param: {
-				mobile: this.state.mobile,
+				phone: this.state.phone,
 				code: this.state.code
 			}
 		}).then(res => {
@@ -31,6 +39,46 @@ export default class Main extends Component {
 		}).catch(errors => {
 			
 		});
+	}
+
+	handleSendCode = () => {
+		if (this.time) return;
+		if (!this.state.phone) {
+			alert('手机号不能为空!');
+			return;
+		}
+		net.ajax({
+			url: API_ROOT[types.USER_LOGIN_CODE_GET],
+			type: "GET",
+			param: {
+				phone: this.state.phone,
+				code: this.state.code
+			}
+		}).then(res => {
+			this.handleCountDown();
+		}).catch(errors => {
+			this.handleCountDown();
+		});
+	}
+
+	handleCountDown = () => {
+		this.time = setInterval(() => {
+			if (this.state.time > 0) {
+				this.setState({
+					codeLoading: false,
+					time: this.state.time - 1,
+					codeContent: `(${this.state.time - 1}s)后重发`
+				});
+			} else {
+				this.setState({
+					time: 60,
+					codeContent: '获取验证码'
+				});
+				this.time && clearInterval(this.time);
+				this.time = null;
+			}
+
+		}, 1000);
 	}
 
 	handleChange(value, type) {
@@ -42,12 +90,12 @@ export default class Main extends Component {
 	render() {
 		return (
 			<div className="v-login g-bg-white" style={{ height: '100%', width: '100%', paddingTop: '200px' }}>
-				<div style={{ marginRight: "40px", marginLeft: "40px",  width: '100%' }}>
+				<div style={{ paddingRight: "40px", paddingLeft: "40px",  width: '100%', boxSizing: 'border-box' }}>
 					<div className="_input g-flex-ac">
 						手机号：
 						<input 
-							value={this.state.mobile}
-							onChange={(e) => this.handleChange(e.target.value, "mobile")} 
+							value={this.state.phone}
+							onChange={(e) => this.handleChange(e.target.value, "phone")} 
 							className="g-col g-m-l-10" maxLength="11" placeholder="请输入手机号" />
 					</div>
 					<div className="_input g-flex-ac">
@@ -56,6 +104,7 @@ export default class Main extends Component {
 							value={this.state.code}
 							onChange={(e) => this.handleChange(e.target.value, "code")} 
 							className="g-col g-m-l-10" placeholder="请输入验证码" />
+						<span onClick={this.handleSendCode}>{this.state.codeContent}</span>
 					</div>
 				</div>
 

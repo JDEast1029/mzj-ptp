@@ -23,15 +23,8 @@ const setCb = () => {
 };
 const otherCb = (response, resolve, reject) => {
 	if (response.status == -1) {
-		
-		if (_global.device.weixin) {
-			delCookie('user_info');
-			MToasts.info('授权失败', 1, () => {
-				window.location.reload();
-			});
-		} else {
-			_global.history.replace('/error/client');
-		}
+		delItem(`user_${_global.version}`);
+		_global.history.replace('/login');
 	}
 };
 const opts = {

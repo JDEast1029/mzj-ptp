@@ -19,7 +19,7 @@ if (__DEV__) {
 	if (!DEV_WITH_SERVER) { // 开发环境-前端自模拟
 		baseUrl = 'http://localhost:3000/api';
 	} else { // 开发环境-后端数据
-		baseUrl = `https://xqb.ruishan666.com`;
+		baseUrl = `http://101.200.55.32`;
 		// baseUrl = `http://xqb.xqb.com`;
 	}
 } else {
