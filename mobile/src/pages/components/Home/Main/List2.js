@@ -30,10 +30,12 @@ export default class List2 extends Component {
 			noLoading: true
 		}).then(res => {
 			Toast.hide();
-			this.info = {
-				list: res.data,
-				isFetched: true
-			};
+			this.setState({
+				info: {
+					list: res.data,
+					isFetched: true
+				}
+			});
 		}).catch(errors => {
 			Toast.hide();
 		});
@@ -50,7 +52,7 @@ export default class List2 extends Component {
 	render() {
 		return (
 			<div className="g-bg-white">
-				<div className="g-flex-cc" style={{ backgroundImage: `url(${Bg})`, width: '100%', height: 110 }} />
+				<div style={{ backgroundImage: `url(${Bg})`, width: '100%', height: 110 }} />
 				
 				{this.renderList()}
 

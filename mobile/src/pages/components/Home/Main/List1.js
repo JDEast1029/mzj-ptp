@@ -8,6 +8,8 @@ import * as types from "@constants/actions/home";
 import Bg from './list1.png';
 import { getItem } from '@utils/utils';
 import { Toast } from 'antd-mobile';
+import MPopup from '@components/_common/MPopup/MPopup';
+import PopContent from './PopContent';
 
 export default class List1 extends Component {
 	constructor(props) {
@@ -33,12 +35,28 @@ export default class List1 extends Component {
 			noLoading: true
 		}).then(res => {
 			Toast.hide();
-			this.info = {
-				list: res.data,
-				isFetched: true
-			};
+			this.setState({
+				info: {
+					list: res.data,
+					isFetched: true
+				}
+			});
 		}).catch(errors => {
 			Toast.hide();
+		});
+	}
+
+	handlePopup = () => {
+		MPopup.popup({
+			parent: this,
+			orientation: 'bottom',
+			content: (
+				<PopContent />
+			)
+		}).then((res) => {
+
+		}).catch((error) => {
+			
 		});
 	}
 
@@ -55,7 +73,7 @@ export default class List1 extends Component {
 
 		return (
 			<div className="g-bg-white">
-				<div style={{ backgroundImage: `url(${Bg})`, width: '100%', height: 110 }}>
+				<div className="g-flex-cc g-c-white" style={{ backgroundImage: `url(${Bg})`, width: '100%', height: 110 }}>
 					{user.phone}
 				</div>
 				{/** <div className="g-flex-ac">
@@ -66,10 +84,15 @@ export default class List1 extends Component {
 
 				{this.renderList()}
 
-
 				<div className="g-m-t-20 g-tc">
-					<p style={{ color: '#ADB2BC' }}>以上全部申请均未下款即可领取</p>
-					<div className="g-flex-cc g-c-white g-fs-16" style={{ margin: '10px 40px 10px 40px', backgroundColor: '#EF0F00', borderRadius: 20, padding: '10px' }}>
+					<p style={{ color: '#ADB2BC' }}>
+						以上全部申请均未下款即可领取
+					</p>
+					<div 
+						className="g-flex-cc g-c-white g-fs-16" 
+						style={{ margin: '10px 40px 10px 40px', backgroundColor: '#EF0F00', borderRadius: 20, padding: '10px' }}
+						onClick={this.handlePopup}
+					>
 						审批被拒领转运红包
 					</div>
 					<Link to="/home?type=2" className="g-flex-cc g-c-white g-fs-16" style={{ margin: '10px 40px 10px 40px', backgroundColor: '#2296F3', borderRadius: 20, padding: '10px' }}>

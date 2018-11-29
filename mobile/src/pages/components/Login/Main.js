@@ -3,9 +3,11 @@ import net from "@utils/net";
 import API_ROOT from "../../constants/apiRoot";
 import * as types from "@constants/actions/login";
 import "./Styles.scss";
+import { Link } from 'react-router';
 import {
 	setItem,
 } from "@utils/utils";
+import Bg from './login.png';
 
 export default class Main extends Component {
 	constructor(props){
@@ -89,32 +91,49 @@ export default class Main extends Component {
 	
 	render() {
 		return (
-			<div className="v-login g-bg-white" style={{ height: '100%', width: '100%', paddingTop: '200px' }}>
-				<div style={{ paddingRight: "40px", paddingLeft: "40px",  width: '100%', boxSizing: 'border-box' }}>
-					<div className="_input g-flex-ac">
+			<div 
+				className="v-login g-bg-white" 
+				style={{ 
+					height: '100%', 
+					width: '100%', 
+					paddingTop: '200px', 
+					backgroundImage: `url(${Bg})`,
+					backgroundSize: 'cover'
+				}}
+			>
+				<div 
+					className="g-flex-ac g-fd-c g-pd-lr-20 g-pd-t-10"
+					style={{ margin: '0 40px', backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: '20px' }}
+				>
+					<h1 className="g-m-b-20" style={{ color: '#e74854' }}>钱多多</h1>
+					<div>
+						<div className="_input g-flex-ac g-m-b-20">
 						手机号：
-						<input 
-							value={this.state.phone}
-							onChange={(e) => this.handleChange(e.target.value, "phone")} 
-							className="g-col g-m-l-10" maxLength="11" placeholder="请输入手机号" />
-					</div>
-					<div className="_input g-flex-ac">
+							<input 
+								value={this.state.phone}
+								onChange={(e) => this.handleChange(e.target.value, "phone")} 
+								className="g-col g-m-l-10" maxLength="11" placeholder="请输入手机号" />
+						</div>
+						<div className="_input g-flex-ac">
 						验证码：
-						<input 
-							value={this.state.code}
-							onChange={(e) => this.handleChange(e.target.value, "code")} 
-							className="g-col g-m-l-10" placeholder="请输入验证码" />
-						<span onClick={this.handleSendCode}>{this.state.codeContent}</span>
+							<input 
+								value={this.state.code}
+								onChange={(e) => this.handleChange(e.target.value, "code")} 
+								className="g-col g-m-l-10" placeholder="请输入验证码" />
+							<span onClick={this.handleSendCode}>{this.state.codeContent}</span>
+						</div>
+					</div>
+
+					<div 
+						className="g-flex-cc g-fs-18 g-c-white" 
+						style={{ width: '100%', margin: "40px", backgroundColor: '#3EAAF4', padding: '10px', borderRadius: '20px' }}
+						onClick={this.handleLogin}
+					>
+						登录
 					</div>
 				</div>
 
-				<div 
-					className="g-flex-cc g-fs-18 g-c-white" 
-					style={{ margin: "40px", backgroundColor: '#3EAAF4', padding: '10px', borderRadius: '20px' }}
-					onClick={this.handleLogin}
-				>
-					登录
-				</div>
+				
 			</div>
 		);
 	}
