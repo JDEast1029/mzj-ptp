@@ -94,171 +94,171 @@ export const setShare = (config = {}) => {
 	// }
 	// if (_global.device.ios && count) return;
 	
-	net.ajax({
-		url: API_ROOT['_WECHAT_SHARE'],
-		type: 'GET',
-		param,
-		noLoading: true,
-	}).then((response) => {
-		_global.device.ios && count++;
-		let res = {
-			...response.data
-		};
+	// net.ajax({
+	// 	url: API_ROOT['_WECHAT_SHARE'],
+	// 	type: 'GET',
+	// 	param,
+	// 	noLoading: true,
+	// }).then((response) => {
+	// 	_global.device.ios && count++;
+	// 	let res = {
+	// 		...response.data
+	// 	};
 
-		res = {
-			...res,
-			url: config.url || res.url
-		};
-		/**
-		 * 分享的标题，描述，图片
-		 */
-		res = {
-			...res,
-			title: config.title || res.title || "",
-			desc: config.desc || res.desc || "",
-			imgUrl: config.img || res.imgUrl || ""
-		};
-		/**
-		 * config
-		 */
-		wxConfigFn(res, param);
-		/**
-		 * ready
-		 */
-		wx.ready(() => {
-			/**
-			 * 在这里调用 API
-			 */
-			const showPage = []; // 允许分享页面
-			if (showPage.includes(location.pathname)) {
-				wx.showMenuItems({
-					menuList: [
-						'menuItem:share:appMessage',
-						'menuItem:share:timeline',
-						'menuItem:share:qq',
-						'menuItem:share:weiboApp',
-						'menuItem:share:facebook',
-						'menuItem:share:QZone'
-					],
-					success: function(res){
+	// 	res = {
+	// 		...res,
+	// 		url: config.url || res.url
+	// 	};
+	// 	/**
+	// 	 * 分享的标题，描述，图片
+	// 	 */
+	// 	res = {
+	// 		...res,
+	// 		title: config.title || res.title || "",
+	// 		desc: config.desc || res.desc || "",
+	// 		imgUrl: config.img || res.imgUrl || ""
+	// 	};
+	// 	/**
+	// 	 * config
+	// 	 */
+	// 	wxConfigFn(res, param);
+	// 	/**
+	// 	 * ready
+	// 	 */
+	// 	wx.ready(() => {
+	// 		/**
+	// 		 * 在这里调用 API
+	// 		 */
+	// 		const showPage = []; // 允许分享页面
+	// 		if (showPage.includes(location.pathname)) {
+	// 			wx.showMenuItems({
+	// 				menuList: [
+	// 					'menuItem:share:appMessage',
+	// 					'menuItem:share:timeline',
+	// 					'menuItem:share:qq',
+	// 					'menuItem:share:weiboApp',
+	// 					'menuItem:share:facebook',
+	// 					'menuItem:share:QZone'
+	// 				],
+	// 				success: function(res){
 
-					},
-					fail: function(res){
-						console.log(JSON.stringify(res));
-					}
-				});
-				wx.onMenuShareAppMessage({
-					title: res.title, // 分享标题
-					desc: res.desc, // 分享页面描述
-					link: res.url, // 分享链接
-					imgUrl: res.imgUrl, // 图片链接
-					success: function(ress) {
-						/**
-						 * 用户确认分享后执行的回调函数
-						 */
-						MToasts.info('操作成功');
-					},
-					cancel: function() {
-						/**
-						 * 用户取消分享后执行的回调函数
-						 */
-						MToasts.info('您取消了该操作');
-					}
-				});
-				wx.onMenuShareTimeline({
-					title: res.title,
-					link: res.url,
-					desc: res.desc, // 分享页面描述
-					imgUrl: res.imgUrl,
-					success: function() {
-						/**
-						 * 用户确认分享后执行的回调函数
-						 */
-						MToasts.info('分享到朋友圈成功');
-					},
-					cancel: function() {
-						/**
-						 * 用户取消分享后执行的回调函数
-						 */
-						MToasts.info('您已取消分享到朋友圈');
-					}
-				});
-				wx.onMenuShareQQ({
-					title: res.title,
-					link: res.url,
-					desc: res.desc, // 分享页面描述
-					imgUrl: res.imgUrl,
-					success: function() {
-						/**
-						 * 用户确认分享后执行的回调函数
-						 */
-						MToasts.info('分享到QQ成功！');
-					},
-					cancel: function() {
-						/**
-						 * 用户取消分享后执行的回调函数
-						 */
-						MToasts.info('您已取消分享到QQ');
-					}
-				});
-				wx.onMenuShareWeibo({
-					title: res.title,
-					link: res.url,
-					desc: res.desc, // 分享页面描述
-					imgUrl: res.imgUrl,
-					success: function() {
-						/**
-						 * 用户确认分享后执行的回调函数
-						 */
-						MToasts.info('分享到微博成功！');
-					},
-					cancel: function() {
-						/**
-						 * 用户取消分享后执行的回调函数
-						 */
-						MToasts.info('您已取消分享到微博');
-					}
-				});
-				wx.onMenuShareQZone({
-					title: res.title,
-					desc: res.desc, // 分享页面描述
-					link: res.url.replace('http://', ''),
-					url: res.url,
-					imgUrl: res.imgUrl,
-					success: function() {
-						/**
-						 * 用户确认分享后执行的回调函数
-						 */
-						MToasts.info('分享到QQ空间成功！');
-					},
-					cancel: function() {
-						/**
-						 * 用户取消分享后执行的回调函数
-						 */
-						MToasts.info('您已取消分享到QQ空间');
-					}
-				});
-			} else {
-				wx.hideMenuItems({
-					menuList: [
-						'menuItem:share:appMessage',
-						'menuItem:share:timeline',
-						'menuItem:share:qq',
-						'menuItem:share:weiboApp',
-						'menuItem:share:facebook',
-						'menuItem:share:QZone'
-					],
-					success: function(res){
+	// 				},
+	// 				fail: function(res){
+	// 					console.log(JSON.stringify(res));
+	// 				}
+	// 			});
+	// 			wx.onMenuShareAppMessage({
+	// 				title: res.title, // 分享标题
+	// 				desc: res.desc, // 分享页面描述
+	// 				link: res.url, // 分享链接
+	// 				imgUrl: res.imgUrl, // 图片链接
+	// 				success: function(ress) {
+	// 					/**
+	// 					 * 用户确认分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('操作成功');
+	// 				},
+	// 				cancel: function() {
+	// 					/**
+	// 					 * 用户取消分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('您取消了该操作');
+	// 				}
+	// 			});
+	// 			wx.onMenuShareTimeline({
+	// 				title: res.title,
+	// 				link: res.url,
+	// 				desc: res.desc, // 分享页面描述
+	// 				imgUrl: res.imgUrl,
+	// 				success: function() {
+	// 					/**
+	// 					 * 用户确认分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('分享到朋友圈成功');
+	// 				},
+	// 				cancel: function() {
+	// 					/**
+	// 					 * 用户取消分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('您已取消分享到朋友圈');
+	// 				}
+	// 			});
+	// 			wx.onMenuShareQQ({
+	// 				title: res.title,
+	// 				link: res.url,
+	// 				desc: res.desc, // 分享页面描述
+	// 				imgUrl: res.imgUrl,
+	// 				success: function() {
+	// 					/**
+	// 					 * 用户确认分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('分享到QQ成功！');
+	// 				},
+	// 				cancel: function() {
+	// 					/**
+	// 					 * 用户取消分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('您已取消分享到QQ');
+	// 				}
+	// 			});
+	// 			wx.onMenuShareWeibo({
+	// 				title: res.title,
+	// 				link: res.url,
+	// 				desc: res.desc, // 分享页面描述
+	// 				imgUrl: res.imgUrl,
+	// 				success: function() {
+	// 					/**
+	// 					 * 用户确认分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('分享到微博成功！');
+	// 				},
+	// 				cancel: function() {
+	// 					/**
+	// 					 * 用户取消分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('您已取消分享到微博');
+	// 				}
+	// 			});
+	// 			wx.onMenuShareQZone({
+	// 				title: res.title,
+	// 				desc: res.desc, // 分享页面描述
+	// 				link: res.url.replace('http://', ''),
+	// 				url: res.url,
+	// 				imgUrl: res.imgUrl,
+	// 				success: function() {
+	// 					/**
+	// 					 * 用户确认分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('分享到QQ空间成功！');
+	// 				},
+	// 				cancel: function() {
+	// 					/**
+	// 					 * 用户取消分享后执行的回调函数
+	// 					 */
+	// 					MToasts.info('您已取消分享到QQ空间');
+	// 				}
+	// 			});
+	// 		} else {
+	// 			wx.hideMenuItems({
+	// 				menuList: [
+	// 					'menuItem:share:appMessage',
+	// 					'menuItem:share:timeline',
+	// 					'menuItem:share:qq',
+	// 					'menuItem:share:weiboApp',
+	// 					'menuItem:share:facebook',
+	// 					'menuItem:share:QZone'
+	// 				],
+	// 				success: function(res){
 
-					},
-					fail: function(res){
-						console.log(JSON.stringify(res));
-					}
-				});
-			}
-		});
-	}).catch ((res) => {
-		alert(JSON.stringify(res));
-		console.error('wechat-share is failed');
-	});	
+	// 				},
+	// 				fail: function(res){
+	// 					console.log(JSON.stringify(res));
+	// 				}
+	// 			});
+	// 		}
+	// 	});
+	// }).catch ((res) => {
+	// 	alert(JSON.stringify(res));
+	// 	console.error('wechat-share is failed');
+	// });	
 };

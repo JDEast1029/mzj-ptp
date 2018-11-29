@@ -27,7 +27,15 @@ export default class Main extends Component {
 	}
 
 	handleLogin = () => {
-		// TODO
+		if (!this.state.phone) {
+			alert('手机号不能为空!');
+			return;
+		}
+		if (!this.state.code) {
+			alert('验证码不能为空!');
+			return;
+		}
+		console.log(11);
 		net.ajax({
 			url: API_ROOT[types.USER_LOGIN_POST],
 			type: "GET",
@@ -39,7 +47,7 @@ export default class Main extends Component {
 			setItem(`user_${_global.version}`, res.data);
 			_global.history.replace('/home');
 		}).catch(errors => {
-			
+			alert(errors.msg);
 		});
 	}
 
@@ -59,7 +67,6 @@ export default class Main extends Component {
 		}).then(res => {
 			this.handleCountDown();
 		}).catch(errors => {
-			this.handleCountDown();
 		});
 	}
 
@@ -103,24 +110,24 @@ export default class Main extends Component {
 			>
 				<div 
 					className="g-flex-ac g-fd-c g-pd-lr-20 g-pd-t-10"
-					style={{ margin: '0 40px', backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: '20px' }}
+					style={{ margin: '0 30px', backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: '20px' }}
 				>
 					<h1 className="g-m-b-20" style={{ color: '#e74854' }}>钱多多</h1>
 					<div>
 						<div className="_input g-flex-ac g-m-b-20">
-						手机号：
+							<span style={{ whiteSpace: 'nowrap' }}>手机号：</span>
 							<input 
 								value={this.state.phone}
 								onChange={(e) => this.handleChange(e.target.value, "phone")} 
 								className="g-col g-m-l-10" maxLength="11" placeholder="请输入手机号" />
 						</div>
 						<div className="_input g-flex-ac">
-						验证码：
+							<span style={{ whiteSpace: 'nowrap' }}>验证码：</span>
 							<input 
 								value={this.state.code}
 								onChange={(e) => this.handleChange(e.target.value, "code")} 
 								className="g-col g-m-l-10" placeholder="请输入验证码" />
-							<span onClick={this.handleSendCode}>{this.state.codeContent}</span>
+							<span style={{ whiteSpace: 'nowrap' }} onClick={this.handleSendCode}>{this.state.codeContent}</span>
 						</div>
 					</div>
 
