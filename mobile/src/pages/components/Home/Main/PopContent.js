@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PopupBg from './image.png';
-import QRCode from './QRcode.png';
+import QRCode from './QRCode.jpg';
 
 export default class PopContent extends Component {
 	render() {

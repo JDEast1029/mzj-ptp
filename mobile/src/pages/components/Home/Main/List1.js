@@ -43,6 +43,7 @@ export default class List1 extends Component {
 			});
 		}).catch(errors => {
 			Toast.hide();
+			Toast.info(errors.message);
 		});
 	}
 

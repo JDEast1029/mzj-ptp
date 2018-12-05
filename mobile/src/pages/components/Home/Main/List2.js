@@ -4,7 +4,7 @@ import Wechat from './Wechat';
 import net from "@utils/net";
 import API_ROOT from "../../../constants/apiRoot";
 import * as types from "@constants/actions/home";
-import Bg from './list2.png';
+import Bg from './list2.jpg';
 import { Toast } from 'antd-mobile';
 export default class List2 extends Component {
 	constructor(props) {
@@ -38,6 +38,7 @@ export default class List2 extends Component {
 			});
 		}).catch(errors => {
 			Toast.hide();
+			Toast.info(errors.message);
 		});
 	}
 
@@ -52,7 +53,13 @@ export default class List2 extends Component {
 	render() {
 		return (
 			<div className="g-bg-white">
-				<div style={{ backgroundImage: `url(${Bg})`, width: '100%', height: 110 }} />
+				<div style={{ width: '100%', height: 110 }}>
+					<img style={{
+						width: '100%',
+						height: '100%',
+						objectFit: 'cover'
+					}} src={Bg} />
+				</div>
 				
 				{this.renderList()}
 

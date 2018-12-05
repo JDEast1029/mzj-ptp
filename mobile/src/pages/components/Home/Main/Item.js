@@ -27,6 +27,9 @@ export default class Item extends Component {
 					<p className="g-fs-12 g-oneline" style={{ color: '#979797' }}>
 						{info.desc}
 					</p>
+					<p className="g-fs-12 g-oneline" style={{ color: '#5DA4DA' }}>
+						已有{info.order_number || 0}人下款
+					</p>
 				</div>
 				<div className="_divider-line" />
 			</div>

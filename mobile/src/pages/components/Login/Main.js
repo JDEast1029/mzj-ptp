@@ -4,10 +4,13 @@ import API_ROOT from "../../constants/apiRoot";
 import * as types from "@constants/actions/login";
 import "./Styles.scss";
 import { Link } from 'react-router';
+import { Toast } from 'antd-mobile';
 import {
 	setItem,
 } from "@utils/utils";
 import Bg from './login.png';
+import Logo from './logo.png';
+import Title from './title.png';
 
 export default class Main extends Component {
 	constructor(props){
@@ -28,14 +31,13 @@ export default class Main extends Component {
 
 	handleLogin = () => {
 		if (!this.state.phone) {
-			alert('手机号不能为空!');
+			Toast.info('手机号不能为空', 1);
 			return;
 		}
 		if (!this.state.code) {
-			alert('验证码不能为空!');
+			Toast.info('验证码不能为空!', 1);
 			return;
 		}
-		console.log(11);
 		net.ajax({
 			url: API_ROOT[types.USER_LOGIN_POST],
 			type: "GET",
@@ -47,14 +49,14 @@ export default class Main extends Component {
 			setItem(`user_${_global.version}`, res.data);
 			_global.history.replace('/home');
 		}).catch(errors => {
-			alert(errors.msg);
+			Toast.info(errors.message);
 		});
 	}
 
 	handleSendCode = () => {
 		if (this.time) return;
 		if (!this.state.phone) {
-			alert('手机号不能为空!');
+			Toast.info('手机号不能为空', 1);
 			return;
 		}
 		net.ajax({
@@ -67,6 +69,7 @@ export default class Main extends Component {
 		}).then(res => {
 			this.handleCountDown();
 		}).catch(errors => {
+			Toast.info(errors.message, 2);
 		});
 	}
 
@@ -99,18 +102,30 @@ export default class Main extends Component {
 	render() {
 		return (
 			<div 
-				className="v-login g-bg-white" 
+				className="v-login g-bg-white g-flex-ac g-fd-c" 
 				style={{ 
 					height: '100%', 
 					width: '100%', 
-					paddingTop: '200px', 
 					backgroundImage: `url(${Bg})`,
 					backgroundSize: 'cover'
 				}}
 			>
+				<div style={{ color: '#ffffff', fontWeight: 'blob', marginTop: '10px' }}>
+					<img className="g-m-r-5" src={Logo} style={{ width: 30 }}/>
+					<strong style={{ fontWeight: 'bolder' }}>钱多多</strong>
+				</div>
+				<div className="g-flex-cc" style={{ width: '90%' }}>
+					<img src={Title} />
+				</div>
 				<div 
-					className="g-flex-ac g-fd-c g-pd-lr-20 g-pd-t-10"
-					style={{ margin: '0 30px', backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: '20px' }}
+					className="g-flex-ac g-fd-c"
+					style={{ 
+						backgroundColor: 'rgba(255, 255, 255, 1)', 
+						borderRadius: '20px',
+						padding: '10px 20px 30px 20px',
+						width: '80%',
+						boxSizing: 'content-box'
+					}}
 				>
 					<h1 className="g-m-b-20" style={{ color: '#e74854' }}>钱多多</h1>
 					<div>
@@ -133,7 +148,7 @@ export default class Main extends Component {
 
 					<div 
 						className="g-flex-cc g-fs-18 g-c-white" 
-						style={{ width: '100%', margin: "40px", backgroundColor: '#3EAAF4', padding: '10px', borderRadius: '20px' }}
+						style={{ width: '100%', margin: "20px 40px 0 40px", backgroundColor: '#3EAAF4', padding: '10px', borderRadius: '20px' }}
 						onClick={this.handleLogin}
 					>
 						登录
